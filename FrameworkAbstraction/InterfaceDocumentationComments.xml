@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Comments for all interfaces and interface methods are included in this common file, so that the same comments can be used by the interfaces, and the classes that implement them -->
+<doc>
+    <assembly>
+        <name>FrameworkAbstraction</name>
+    </assembly>
+    <members>
+        <member name="T:FrameworkAbstraction.IFile">
+            <summary>
+                Represents a file within the file system.
+            </summary>
+        </member>
+        <member name="M:FrameworkAbstraction.IFile.ReadAll">
+            <summary>
+                Reads the entire contents of the file as a string.
+            </summary>
+            <returns>The contents of the file.</returns>
+        </member>
+        <member name="M:FrameworkAbstraction.IFile.WriteAll(System.String)">
+            <summary>
+                Overwrites the entire contents of the file with the specified string.
+            </summary>
+            <param name="data">The data to write to the file.</param>
+        </member>
+        <member name="P:FrameworkAbstraction.IFile.Path">
+            <summary>
+                The full path to the file.
+            </summary>
+        </member>
+        <member name="T:FrameworkAbstraction.IFileSystem">
+            <summary>
+                Represents the file system.
+            </summary>
+        </member>
+        <member name="M:FrameworkAbstraction.IFileSystem.CheckFileExists(System.String)">
+            <summary>
+                Checks whether a file at the given path exists in the file system.
+            </summary>
+            <param name="path">The full path to the file.</param>
+            <returns>Whether the specified file exists.</returns>
+        </member>
+        <member name="M:FrameworkAbstraction.IFileSystem.DeleteFile(System.String)">
+            <summary>
+                Deletes the file specified by the given path.
+            </summary>
+            <param name="path">The full path to the file.</param>
+        </member>
+        <member name="T:FrameworkAbstraction.ITcpClient">
+            <summary>
+                Provides an abstraction of the System.Net.Sockets.TcpClient class, to facilitate mocking and unit testing.
+            </summary>
+        </member>
+        <member name="M:FrameworkAbstraction.ITcpClient.Connect(System.Net.IPAddress,System.Int32)">
+            <summary>
+                Connects the client to a remote TCP host using the specified IP address and port number.
+            </summary>
+            <param name="ipAddress">The System.Net.IPAddress of the host to which you intend to connect.</param>
+            <param name="port">The port number to which you intend to connect.</param>
+        </member>
+        <member name="M:FrameworkAbstraction.ITcpClient.GetStream">
+            <summary>
+                Returns the network stream used to send and receive data.
+            </summary>
+            <returns>The underlying network stream.</returns>
+        </member>
+        <member name="M:FrameworkAbstraction.ITcpClient.Close">
+            <summary>
+                Disposes this object instance and requests that the underlying TCP connection be closed.
+            </summary>
+        </member>
+        <member name="P:FrameworkAbstraction.ITcpClient.Connected">
+            <summary>
+                Gets a value indicating whether the underlying Socket for the TcpClient class is connected to a remote host.
+            </summary>
+        </member>
+        <member name="P:FrameworkAbstraction.ITcpClient.Available">
+            <summary>
+                Gets the amount of data that has been received from the network and is available to be read.
+            </summary>
+        </member>
+        <member name="T:FrameworkAbstraction.ITcpListener">
+            <summary>
+                Provides an abstraction of the System.Net.Sockets.TcpListener class, to facilitate mocking and unit testing.
+            </summary>
+        </member>
+        <member name="M:FrameworkAbstraction.ITcpListener.Pending">
+            <summary>
+                Determines if there are pending connection requests.
+            </summary>
+            <returns>true if connections are pending; otherwise, false.</returns>
+        </member>
+        <member name="M:FrameworkAbstraction.ITcpListener.AcceptTcpClient">
+            <summary>
+                Accepts a pending connection request.
+            </summary>
+            <returns>A TcpClient used to send and receive data.</returns>
+        </member>
+        <member name="M:FrameworkAbstraction.ITcpListener.Start(System.Int32)">
+            <summary>
+                Starts listening for incoming connection requests with a maximum number of pending connection.
+            </summary>
+            <param name="backlog">The maximum length of the pending connections queue.</param>
+        </member>
+        <member name="M:FrameworkAbstraction.ITcpListener.Stop">
+            <summary>
+                Closes the listener.
+            </summary>
+        </member>
+        <member name="P:FrameworkAbstraction.ITcpListener.Active">
+            <summary>
+                Gets a value that indicates whether the listener is actively listening for client connections.
+            </summary>
+        </member>
+        <member name="T:FrameworkAbstraction.INetworkStream">
+            <summary>
+                Provides an abstraction of the System.Net.Sockets.NetworkStream class, to facilitate mocking and unit testing.
+            </summary>
+        </member>
+        <member name="P:FrameworkAbstraction.INetworkStream.CanRead">
+            <summary>
+                Gets a value that indicates whether the NetworkStream supports reading.
+            </summary>
+        </member>
+        <member name="M:FrameworkAbstraction.INetworkStream.ReadByte">
+            <summary>
+                Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.
+            </summary>
+            <returns>The unsigned byte cast to an Int32, or -1 if at the end of the stream.</returns>
+        </member>
+        <member name="M:FrameworkAbstraction.INetworkStream.Read(System.Byte[]@,System.Int32,System.Int32)">
+            <summary>
+                Reads data from the NetworkStream.
+            </summary>
+            <param name="buffer">An array of type Byte that is the location in memory to store data read from the NetworkStream.</param>
+            <param name="offset">The location in buffer to begin storing the data to. </param>
+            <param name="size">The number of bytes to read from the NetworkStream. </param>
+            <returns>The number of bytes read from the NetworkStream.</returns>
+            <remarks>Note that parameter 'buffer' has been explicitly marked as a ref parameter, to allow correct mocking of this method with NMock2.</remarks>
+        </member>
+        <member name="M:FrameworkAbstraction.INetworkStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Writes data to the stream.
+            </summary>
+            <param name="buffer">An array of type Byte that contains the data to write to the stream. </param>
+            <param name="offset">The location in buffer from which to start writing data. </param>
+            <param name="size">The number of bytes to write to the stream.</param>
+        </member>
+        <member name="M:FrameworkAbstraction.INetworkStream.WriteByte(System.Byte)">
+            <summary>
+                Writes a byte to the current position in the stream and advances the position within the stream by one byte.
+            </summary>
+            <param name="value">The byte to write to the stream.</param>
+        </member>
+        <member name="T:FrameworkAbstraction.IStreamWriter">
+            <summary>
+                Provides an abstraction of the System.IO.StreamWriter class, to facilitate mocking and unit testing.
+            </summary>
+        </member>
+        <member name="M:FrameworkAbstraction.IStreamWriter.Close">
+            <summary>
+                Closes the current StreamWriter object and the underlying stream.
+            </summary>
+        </member>
+        <member name="M:FrameworkAbstraction.IStreamWriter.Flush">
+            <summary>
+               Clears all buffers for the current writer and causes any buffered data to be written to the underlying stream.
+            </summary>
+        </member>
+        <member name="M:FrameworkAbstraction.IStreamWriter.WriteLine(System.String)">
+            <summary>
+                Writes a string followed by a line terminator to the text string or stream.
+            </summary>
+            <param name="value">The string to write. If value is null, only the line terminator is written. </param>
+        </member>
+      <member name="T:FrameworkAbstraction.IDateTime">
+        <summary>
+          Provides an abstraction of the System.DateTime structure, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.IDateTime.Now">
+        <summary>
+          Gets a DateTime object that is set to the current date and time on this computer, expressed as the local time.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.IDateTime.UtcNow">
+        <summary>
+          Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
+        </summary>
+      </member>
+      <member name="T:FrameworkAbstraction.IOleDbConnection">
+        <summary>
+          Provides an abstraction of the System.Data.OleDb.OleDbConnection class, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.IOleDbConnection.ConnectionString">
+        <summary>
+          Gets or sets the string used to open a database.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.IOleDbConnection.Open">
+        <summary>
+          Opens a database connection with the property settings specified by the ConnectionString.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.IOleDbConnection.Close">
+        <summary>
+          Closes the connection to the data source.
+        </summary>
+      </member>
+      <member name="T:FrameworkAbstraction.IOleDbCommand">
+        <summary>
+          Provides an abstraction of the System.Data.OleDb.OleDbCommand class, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.IOleDbConnection.CommandText">
+        <summary>
+          The SQL statement or stored procedure to execute. The default value is an empty string.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.IOleDbConnection.State">
+        <summary>
+          Gets the current state of the connection.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.IOleDbConnection.ExecuteNonQuery">
+        <summary>
+          Executes an SQL statement against the Connection and returns the number of rows affected.
+        </summary>
+      </member>
+      <member name="T:FrameworkAbstraction.IConsole">
+        <summary>
+          Provides an abstraction of the System.Console class, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.IConsole.Write(System.String)">
+        <summary>
+          Writes the specified string value to the standard output stream.
+        </summary>
+        <param name="value">The value to write.</param>
+      </member>
+      <member name="M:FrameworkAbstraction.IConsole.WriteLine">
+        <summary>
+          Writes the current line terminator to the standard output stream.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.IConsole.WriteLine(System.String)">
+        <summary>
+          Writes the specified string value, followed by the current line terminator, to the standard output stream.
+        </summary>
+        <param name="value">The value to write.</param>
+      </member>
+      <member name="M:FrameworkAbstraction.IConsole.Clear">
+        <summary>
+          Clears the console buffer and corresponding console window of display information.
+        </summary>
+      </member>
+      <member name="T:FrameworkAbstraction.IPerformanceCounterCategory">
+        <summary>
+          Provides an abstraction of the System.Diagnostics.PerformanceCounterCategory class, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.IPerformanceCounterCategory.Exists(System.String)">
+        <summary>
+          Determines whether the category is registered on the local computer.
+        </summary>
+        <param name="categoryName">The name of the performance counter category to look for.</param>
+        <returns>true if the category is registered; otherwise, false.</returns>
+      </member>
+      <member name="M:FrameworkAbstraction.IPerformanceCounterCategory.Delete(System.String)">
+        <summary>
+          Removes the category and its associated counters from the local computer.
+        </summary>
+        <param name="categoryName">The name of the custom performance counter category to delete.</param>
+      </member>
+      <member name="M:FrameworkAbstraction.IPerformanceCounterCategory.Create(System.String,System.String,System.Diagnostics.PerformanceCounterCategoryType,ICounterCreationDataCollection)">
+        <summary>
+          Registers the custom performance counter category containing the specified counters on the local computer.
+        </summary>
+        <param name="categoryName">The name of the custom performance counter category to create and register with the system.</param>
+        <param name="categoryHelp">A description of the custom category.</param>
+        <param name="categoryType">One of the PerformanceCounterCategoryType values. </param>
+        <param name="counterData">An ICounterCreationDataCollection implementation that specifies the counters to create as part of the new category.</param>
+      </member>
+      <member name="T:FrameworkAbstraction.IPerformanceCounter">
+        <summary>
+          Provides an abstraction of the System.Diagnostics.PerformanceCounter class, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.IPerformanceCounter.RawValue">
+        <summary>
+          Sets the raw, or uncalculated, value of this counter.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.IPerformanceCounter.Dispose">
+        <summary>
+          Releases all resources used by the Component.
+        </summary>
+      </member>
+      <member name="T:FrameworkAbstraction.IPerformanceCounterFactory">
+        <summary>
+          Provides an abstraction for creation of System.Diagnostics.PerformanceCounter objects, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.IPerformanceCounterFactory.Create(System.String,System.String,System.Boolean)">
+        <summary>
+          Creates a new instance of an implementation of the FrameworkAbstraction.IPerformanceCounter interface.
+        </summary>
+        <param name="categoryName">The name of the performance counter category (performance object) with which this performance counter is associated.</param>
+        <param name="counterName">The name of the performance counter.</param>
+        <param name="readOnly">true to access the counter in read-only mode (although the counter itself could be read/write); false to access the counter in read/write mode.</param>
+        <returns>The FrameworkAbstraction.IPerformanceCounter implementation.</returns>
+      </member>
+      <member name="T:FrameworkAbstraction.ICounterCreationData">
+        <summary>
+          Provides an abstraction of the System.Diagnostics.CounterCreationData class, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.ICounterCreationData.CreationData">
+        <summary>
+          The real counter creation data underlying the abstraction.
+        </summary>
+      </member>
+      <member name="T:FrameworkAbstraction.ICounterCreationDataFactory">
+        <summary>
+          Provides an abstraction for creation of System.Diagnostics.CounterCreationData objects, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.ICounterCreationDataFactory.Create(System.String,System.String,System.Diagnostics.PerformanceCounterType)">
+        <summary>
+          Creates a new instance of an implementation of the FrameworkAbstraction.ICounterCreationData interface.
+        </summary>
+        <param name="counterName">The name of the counter, which must be unique within its category.</param>
+        <param name="counterHelp">The text that describes the counter's behavior.</param>
+        <param name="counterType">A PerformanceCounterType that identifies the counter's behavior.</param>
+        <returns>The FrameworkAbstraction.ICounterCreationData implementation.</returns>
+      </member>
+      <member name="T:FrameworkAbstraction.ICounterCreationDataCollection">
+        <summary>
+          Provides an abstraction of the System.Diagnostics.CounterCreationDataCollection class, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="M:FrameworkAbstraction.ICounterCreationDataCollection.Add(FrameworkAbstraction.ICounterCreationData)">
+        <summary>
+          Adds an implementation of the ICounterCreationData interface to the collection.
+        </summary>
+        <param name="value">An ICounterCreationData object to append to the existing collection.</param>
+        <returns>The index of the new ICounterCreationData object.</returns>
+      </member>
+      <member name="P:FrameworkAbstraction.ICounterCreationDataCollection.Collection">
+        <summary>
+          The real counter creation data collection underlying the abstraction.
+        </summary>
+      </member>
+    </members>
+  </doc>
