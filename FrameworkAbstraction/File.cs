@@ -30,6 +30,7 @@ namespace FrameworkAbstraction
     /// </summary>
     public class File : IFile, IDisposable
     {
+        /// <summary>Indicates whether the object has been disposed.</summary>
         protected bool disposed;
         private string path;
         private System.IO.FileStream fileStream;

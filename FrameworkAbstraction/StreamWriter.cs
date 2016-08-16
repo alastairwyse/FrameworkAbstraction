@@ -30,6 +30,7 @@ namespace FrameworkAbstraction
     /// </summary>
     public class StreamWriter : IStreamWriter
     {
+        /// <summary>Indicates whether the object has been disposed.</summary>
         protected bool disposed;
         private System.IO.StreamWriter streamWriter;
 

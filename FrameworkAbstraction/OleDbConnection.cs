@@ -30,6 +30,7 @@ namespace FrameworkAbstraction
     /// </summary>
     public class OleDbConnection : IOleDbConnection
     {
+        /// <summary>Indicates whether the object has been disposed.</summary>
         protected bool disposed;
         private System.Data.OleDb.OleDbConnection oleDbConnection;
 

@@ -31,6 +31,7 @@ namespace FrameworkAbstraction
     /// <remarks>As per http://msdn.microsoft.com/en-us/library/ych8bz3x.aspx, a System.Net.Sockets.Socket object cannot be used to perform a synchronous reconnect after having previously been connected.  Hence the Close() method disposes the underlying TcpClient class, and the Connect() method subsequently creates a new instance.</remarks>
     public class TcpClient : ITcpClient
     {
+        /// <summary>Indicates whether the object has been disposed.</summary>
         protected bool disposed;
         private System.Net.Sockets.TcpClient tcpClient;
         // Following boolean is used to denote whether the overloaded constructor is used which injects the underlying System.Net.Sockets.TcpClient

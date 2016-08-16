@@ -30,6 +30,7 @@ namespace FrameworkAbstraction
     /// </summary>
     public class TcpListener : ITcpListener
     {
+        /// <summary>Indicates whether the object has been disposed.</summary>
         protected bool disposed;
         private ExtendedTcpListener tcpListener;
 

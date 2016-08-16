@@ -50,7 +50,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\FrameworkAbstraction.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\FrameworkAbstraction.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -65,6 +65,7 @@
     <Compile Include="DateTime.cs" />
     <Compile Include="ExtendedTcpListener.cs" />
     <Compile Include="File.cs" />
+    <Compile Include="FileInfo.cs" />
     <Compile Include="FileSystem.cs" />
     <Compile Include="IConsole.cs" />
     <Compile Include="ICounterCreationData.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="ICounterCreationDataFactory.cs" />
     <Compile Include="IDateTime.cs" />
     <Compile Include="IFile.cs" />
+    <Compile Include="IFileInfo.cs" />
     <Compile Include="IFileSystem.cs" />
     <Compile Include="INetworkStream.cs" />
     <Compile Include="IOleDbCommand.cs" />

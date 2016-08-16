@@ -351,5 +351,20 @@
           The real counter creation data collection underlying the abstraction.
         </summary>
       </member>
+      <member name="T:FrameworkAbstraction.IFileInfo">
+        <summary>
+          Provides an abstraction of the System.IO.FileInfo class, to facilitate mocking and unit testing.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.IFileInfo.DirectoryName">
+        <summary>
+          Gets a string representing the directory's full path.
+        </summary>
+      </member>
+      <member name="P:FrameworkAbstraction.IFileInfo.Name">
+        <summary>
+          Gets the name of the file.
+        </summary>
+      </member>
     </members>
   </doc>
