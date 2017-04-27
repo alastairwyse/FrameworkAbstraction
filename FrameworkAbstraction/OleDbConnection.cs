@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Alastair Wyse (https://github.com/alastairwyse/FrameworkAbstraction)
+ * Copyright 2017 Alastair Wyse (https://github.com/alastairwyse/FrameworkAbstraction)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,13 +129,14 @@ namespace FrameworkAbstraction
                 if (disposing)
                 {
                     // Free other state (managed objects).
+                    if (oleDbConnection != null)
+                    {
+                        oleDbConnection.Close();
+                        oleDbConnection.Dispose();
+                    }
                 }
                 // Free your own state (unmanaged objects).
-                if (oleDbConnection != null)
-                {
-                    oleDbConnection.Close();
-                    oleDbConnection.Dispose();
-                }
+
                 // Set large fields to null.
                 oleDbConnection = null;
 

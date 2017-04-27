@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Alastair Wyse (https://github.com/alastairwyse/FrameworkAbstraction)
+ * Copyright 2017 Alastair Wyse (https://github.com/alastairwyse/FrameworkAbstraction)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -158,18 +158,19 @@ namespace FrameworkAbstraction
                 if (disposing)
                 {
                     // Free other state (managed objects).
+                    // Note that if the instance of the class was created with an injected TcpClient, we do not close and free resources here.  It is up to the class that created the injected TcpClient to dispose of it.
+                    if ((injectedClient == false) && (tcpClient != null))
+                    {
+                        if (tcpClient.Connected == true)
+                        {
+                            tcpClient.Client.Shutdown(System.Net.Sockets.SocketShutdown.Send);
+                            tcpClient.Client.Disconnect(false);
+                        }
+                        tcpClient.Close();
+                    }
                 }
                 // Free your own state (unmanaged objects).
-                // Note that if the instance of the class was created with an injected TcpClient, we do not close and free resources here.  It is up to the class that created the injected TcpClient to dispose of it.
-                if ((injectedClient == false) && (tcpClient != null))
-                {
-                    if (tcpClient.Connected == true)
-                    {
-                        tcpClient.Client.Shutdown(System.Net.Sockets.SocketShutdown.Send);
-                        tcpClient.Client.Disconnect(false);
-                    }
-                    tcpClient.Close();
-                }
+                
                 // Set large fields to null.
                 tcpClient = null;
 

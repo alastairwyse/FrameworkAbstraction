@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Alastair Wyse (https://github.com/alastairwyse/FrameworkAbstraction)
+ * Copyright 2017 Alastair Wyse (https://github.com/alastairwyse/FrameworkAbstraction)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,5 +40,11 @@ namespace FrameworkAbstraction
 
         /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="M:FrameworkAbstraction.IFile.WriteAll(System.String)"]/*'/>
         void WriteAll(string data);
+
+        /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="M:FrameworkAbstraction.IFile.ReadAllLines(System.String)"]/*'/>
+        String[] ReadAllLines(String path);
+
+        /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="M:FrameworkAbstraction.IFile.OpenRead(System.String)"]/*'/>
+        IFileStream OpenRead(String path);
     }
 }

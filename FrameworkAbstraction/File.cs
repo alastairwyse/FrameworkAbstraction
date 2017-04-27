@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Alastair Wyse (https://github.com/alastairwyse/FrameworkAbstraction)
+ * Copyright 2017 Alastair Wyse (https://github.com/alastairwyse/FrameworkAbstraction)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,16 @@ namespace FrameworkAbstraction
         // Method: File (constructor)
         //
         //------------------------------------------------------------------------------
+        /// <summary>
+        /// Initialises a new instance of the FrameworkAbstraction.File class.
+        /// </summary>
+        public File()
+        {
+        }
+
+        // TODO : Below constructor and 'Path' property are potentially legacy code (private 'path' member doesn't seem to be used anywhere in the class)
+        //   Could potentially remove this constructor and property
+
         /// <summary>
         /// Initialises a new instance of the FrameworkAbstraction.File class.
         /// </summary>
@@ -92,6 +102,18 @@ namespace FrameworkAbstraction
                 }
                 Close();
             }
+        }
+
+        /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="M:FrameworkAbstraction.IFile.ReadAllLines(System.String)"]/*'/>
+        public string[] ReadAllLines(string path)
+        {
+            return System.IO.File.ReadAllLines(path);
+        }
+
+        /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="M:FrameworkAbstraction.IFile.OpenRead(System.String)"]/*'/>
+        public IFileStream OpenRead(String path)
+        {
+            return new FileStream(System.IO.File.OpenRead(path));
         }
 
         //------------------------------------------------------------------------------
@@ -169,12 +191,13 @@ namespace FrameworkAbstraction
                 if (disposing)
                 {
                     // Free other state (managed objects).
+                    if (fileStream != null)
+                    {
+                        fileStream.Dispose();
+                    }
                 }
                 // Free your own state (unmanaged objects).
-                if (fileStream != null)
-                {
-                    fileStream.Dispose();
-                }
+
                 // Set large fields to null.
                 path = null;
                 disposed = true;

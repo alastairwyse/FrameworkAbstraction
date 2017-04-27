@@ -66,6 +66,7 @@
     <Compile Include="ExtendedTcpListener.cs" />
     <Compile Include="File.cs" />
     <Compile Include="FileInfo.cs" />
+    <Compile Include="FileStream.cs" />
     <Compile Include="FileSystem.cs" />
     <Compile Include="IConsole.cs" />
     <Compile Include="ICounterCreationData.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="IDateTime.cs" />
     <Compile Include="IFile.cs" />
     <Compile Include="IFileInfo.cs" />
+    <Compile Include="IFileStream.cs" />
     <Compile Include="IFileSystem.cs" />
     <Compile Include="INetworkStream.cs" />
     <Compile Include="IOleDbCommand.cs" />
