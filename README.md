@@ -39,7 +39,7 @@ The project was originally included as a part of the [Method Invocation Remoting
   <tr>
     <td valign="top">1.4.0.0</td>
     <td>
-      Initial version forked from the [Method Invocation Remoting](http://www.oraclepermissiongenerator.net/methodinvocationremoting/) project
+      Initial version forked from the <a href="http://www.oraclepermissiongenerator.net/methodinvocationremoting/">Method Invocation Remoting</a> project
     </td>
   </tr>
 </table>
