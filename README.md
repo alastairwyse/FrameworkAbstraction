@@ -15,24 +15,24 @@ The project was originally included as a part of the [Method Invocation Remoting
   <tr>
     <td valign="top">1.6.0.0</td>
     <td>
-      Added class FileStream
-      Added interface IFileStream
-      Added the following methods to the IFile interface...
-        ReadAllLines(String path)
-        OpenRead(String path)
-      Corrected Dispose() method in the following classes...
-        File
-        OleDbCommand
-        OleDbConnection
-        PerformanceCounter
-        TcpClient
-        TcpListener
+      Added class FileStream<br />
+      Added interface IFileStream<br />
+      Added the following methods to the IFile interface...<br />
+      &nbsp;&nbsp;ReadAllLines(String path)<br />
+      &nbsp;&nbsp;OpenRead(String path)<br />
+      Corrected Dispose() method in the following classes...<br />
+      &nbsp;&nbsp;File<br />
+      &nbsp;&nbsp;OleDbCommand<br />
+      &nbsp;&nbsp;OleDbConnection<br />
+      &nbsp;&nbsp;PerformanceCounter<br />
+      &nbsp;&nbsp;TcpClient<br />
+      &nbsp;&nbsp;TcpListener
     </td>
   </tr>
   <tr>
     <td valign="top">1.5.0.0</td>
     <td>
-      Added class FileInfo
+      Added class FileInfo<br />
       Added interface IFileInfo
     </td>
   </tr>
