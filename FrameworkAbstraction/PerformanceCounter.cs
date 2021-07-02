@@ -20,22 +20,12 @@ using System.Text;
 
 namespace FrameworkAbstraction
 {
-    //******************************************************************************
-    //
-    // Class: PerformanceCounter
-    //
-    //******************************************************************************
     /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="T:FrameworkAbstraction.IPerformanceCounter"]/*'/>
     class PerformanceCounter : IPerformanceCounter
     {
         protected bool disposed;
         private System.Diagnostics.PerformanceCounter performanceCounter;
 
-        //------------------------------------------------------------------------------
-        //
-        // Method: PerformanceCounter (constructor)
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Initialises a new instance of the FrameworkAbstraction.PerformanceCounter class.
         /// </summary>
@@ -74,11 +64,6 @@ namespace FrameworkAbstraction
         }
         #pragma warning restore 1591
 
-        //------------------------------------------------------------------------------
-        //
-        // Method: Dispose
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Provides a method to free unmanaged resources used by this class.
         /// </summary>

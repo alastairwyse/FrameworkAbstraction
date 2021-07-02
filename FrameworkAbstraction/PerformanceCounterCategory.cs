@@ -20,19 +20,9 @@ using System.Text;
 
 namespace FrameworkAbstraction
 {
-    //******************************************************************************
-    //
-    // Class: PerformanceCounterCategory
-    //
-    //******************************************************************************
     /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="T:FrameworkAbstraction.IPerformanceCounterCategory"]/*'/>
     public class PerformanceCounterCategory : IPerformanceCounterCategory
     {
-        //------------------------------------------------------------------------------
-        //
-        // Method: PerformanceCounterCategory (constructor)
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Initialises a new instance of the FrameworkAbstraction.PerformanceCounterCategory class.
         /// </summary>

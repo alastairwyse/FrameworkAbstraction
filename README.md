@@ -3,7 +3,7 @@ FrameworkAbstraction
 
 FrameworkAbstraction provides wrapper interfaces around .NET framework classes which interact with the operating system (e.g. classes in the System.IO.File and System.Net.Sockets namespaces).  This allows for mocking of these classes in unit tests.
 
-The project was originally included as a part of the [Method Invocation Remoting](http://www.alastairwyse.net/methodinvocationremoting/) project, and was named 'OperatingSystemAbstraction'.
+As of version 2.0.0, any interfaces which are part of .NET Standard have been removed from this project and moved over to [StandardAbstraction](https://github.com/alastairwyse/StandardAbstraction/).  Interfaces remaining in this project are specific to either Windows or .NET Framework.
 
 #### Release History
 
@@ -11,6 +11,12 @@ The project was originally included as a part of the [Method Invocation Remoting
   <tr>
     <td><b>Version</b></td>
     <td><b>Changes</b></td>
+  </tr>
+  <tr>
+    <td valign="top">2.0.0.0</td>
+    <td>
+      Removed interfaces compatible with .NET Standard to the <a href="https://github.com/alastairwyse/StandardAbstraction">StandardAbstraction</a> project
+    </td>
   </tr>
   <tr>
     <td valign="top">1.6.0.0</td>

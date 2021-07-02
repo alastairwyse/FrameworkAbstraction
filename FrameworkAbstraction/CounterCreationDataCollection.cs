@@ -20,21 +20,11 @@ using System.Text;
 
 namespace FrameworkAbstraction
 {
-    //******************************************************************************
-    //
-    // Class: CounterCreationDataCollection
-    //
-    //******************************************************************************
     /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="T:FrameworkAbstraction.ICounterCreationDataCollection"]/*'/>
     public class CounterCreationDataCollection : ICounterCreationDataCollection
     {
         private System.Diagnostics.CounterCreationDataCollection counterCreationDataCollection;
 
-        //------------------------------------------------------------------------------
-        //
-        // Method: CounterCreationDataFactory (constructor)
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Initialises a new instance of the FrameworkAbstraction.CounterCreationDataCollection class.
         /// </summary>

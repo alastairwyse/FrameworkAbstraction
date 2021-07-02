@@ -20,11 +20,6 @@ using System.Text;
 
 namespace FrameworkAbstraction
 {
-    //******************************************************************************
-    //
-    // Interface: ITcpClient
-    //
-    //******************************************************************************
     /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="T:FrameworkAbstraction.IPerformanceCounterCategory"]/*'/>
     public interface IPerformanceCounterCategory
     {

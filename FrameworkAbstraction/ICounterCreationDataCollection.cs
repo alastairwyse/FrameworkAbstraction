@@ -20,11 +20,6 @@ using System.Text;
 
 namespace FrameworkAbstraction
 {
-    //******************************************************************************
-    //
-    // Interface: ICounterCreationDataCollection
-    //
-    //******************************************************************************
     /// <include file='InterfaceDocumentationComments.xml' path='doc/members/member[@name="T:FrameworkAbstraction.ICounterCreationDataCollection"]/*'/>
     public interface ICounterCreationDataCollection
     {

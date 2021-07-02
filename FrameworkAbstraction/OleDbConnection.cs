@@ -20,11 +20,6 @@ using System.Text;
 
 namespace FrameworkAbstraction
 {
-    //******************************************************************************
-    //
-    // Class: OleDbConnection
-    //
-    //******************************************************************************
     /// <summary>
     /// Provides an abstraction of the System.Data.OleDb.OleDbConnection class, to facilitate mocking and unit testing.
     /// </summary>
@@ -68,12 +63,6 @@ namespace FrameworkAbstraction
             }
         }
 
-
-        //------------------------------------------------------------------------------
-        //
-        // Method: OleDbConnection (constructor)
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Initialises a new instance of the FrameworkAbstraction.OleDbConnection class.
         /// </summary>
@@ -113,11 +102,6 @@ namespace FrameworkAbstraction
         }
         #pragma warning restore 1591
 
-        //------------------------------------------------------------------------------
-        //
-        // Method: Dispose
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Provides a method to free unmanaged resources used by this class.
         /// </summary>

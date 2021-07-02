@@ -20,11 +20,6 @@ using System.Text;
 
 namespace FrameworkAbstraction
 {
-    //******************************************************************************
-    //
-    // Class: OleDbCommand
-    //
-    //******************************************************************************
     /// <summary>
     /// Provides an abstraction of the System.Data.OleDb.OleDbCommand class, to facilitate mocking and unit testing.
     /// </summary>
@@ -47,11 +42,6 @@ namespace FrameworkAbstraction
             }
         }
 
-        //------------------------------------------------------------------------------
-        //
-        // Method: OleDbCommand (constructor)
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Initialises a new instance of the FrameworkAbstraction.OleDbCommand class.
         /// </summary>
@@ -61,11 +51,6 @@ namespace FrameworkAbstraction
             disposed = false;
         }
 
-        //------------------------------------------------------------------------------
-        //
-        // Method: OleDbCommand (constructor)
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Initialises a new instance of the FrameworkAbstraction.OleDbCommand class.
         /// </summary>
@@ -101,11 +86,6 @@ namespace FrameworkAbstraction
         }
         #pragma warning restore 1591
 
-        //------------------------------------------------------------------------------
-        //
-        // Method: Dispose
-        //
-        //------------------------------------------------------------------------------
         /// <summary>
         /// Provides a method to free unmanaged resources used by this class.
         /// </summary>

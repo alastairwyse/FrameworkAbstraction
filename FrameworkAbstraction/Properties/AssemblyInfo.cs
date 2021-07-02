@@ -30,6 +30,6 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyCopyrightAttribute("Copyright © Alastair Wyse 2017")]
-[assembly: AssemblyVersionAttribute("1.6.0.0")]
-[assembly: AssemblyFileVersionAttribute("1.6.0.0")]
+[assembly: AssemblyCopyright("Copyright © Alastair Wyse 2021")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]
