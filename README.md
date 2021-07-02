@@ -15,7 +15,7 @@ As of version 2.0.0, any interfaces which are part of .NET Standard have been re
   <tr>
     <td valign="top">2.0.0.0</td>
     <td>
-      Removed interfaces compatible with .NET Standard to the <a href="https://github.com/alastairwyse/StandardAbstraction">StandardAbstraction</a> project
+      Moved interfaces compatible with .NET Standard to the <a href="https://github.com/alastairwyse/StandardAbstraction">StandardAbstraction</a> project
     </td>
   </tr>
   <tr>
